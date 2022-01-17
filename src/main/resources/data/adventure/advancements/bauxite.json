@@ -1,0 +1,41 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Where is my copper?",
+            "color": "gold",
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "strikethrough": false,
+            "obfuscated": false
+        },
+        "description": {
+            "text": "Get bauxite instead of copper"
+        },
+        "icon": {
+            "item": "shaftcraft:raw_bauxite"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "get3": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "shaftcraft:raw_bauxite",
+                        "count": {
+                            "min": 1,
+                            "max": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "parent": "adventure:root"
+}

@@ -1,0 +1,21 @@
+{
+  "item.shaftcraft.graphite": "Graphite",
+  "block.shaftcraft.graphite_ore": "Graphite Ore",
+  "item.shaftcraft.raw_graphite": "Raw Graphite",
+
+  "item.shaftcraft.bauxite": "Bauxite",
+  "block.shaftcraft.bauxite_ore": "Bauxite Ore",
+  "item.shaftcraft.raw_bauxite": "Raw Bauxite",
+
+  "item.shaftcraft.limonite": "Limonite",
+  "block.shaftcraft.limonite_ore": "Limonite Ore",
+
+  "item.shaftcraft.ruby": "Ruby",
+  "block.shaftcraft.ruby_ore": "Ruby Ore",
+
+  "item.shaftcraft.synthetic_ruby": "Synthetic Ruby",
+
+  "itemGroup.tab0": "ShaftCraft: Miscellaneous",
+  "itemGroup.tab1": "ShaftCraft: Ores",
+  "itemGroup.tab2": "ShaftCraft: Decorations"
+}
