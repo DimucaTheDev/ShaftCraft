@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "shaftcraft:block/bauxite_ore" }
+    "": { "model": "shaftcraft:block/void" }
   }
 }
