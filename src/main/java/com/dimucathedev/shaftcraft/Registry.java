@@ -46,6 +46,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -90,7 +91,7 @@ public class Registry {
     public static final CreativeModeTab tabDev = new CreativeModeTab("tab4") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(Blocks.COMMAND_BLOCK);
+            return new ItemStack(WRENCH.get());
         }
 
         @Override
@@ -98,6 +99,13 @@ public class Registry {
             return super.setBackgroundImage(new ResourceLocation("shaftcraft","dnu.png"));
         }
     };
+    public static final CreativeModeTab tabTools = new CreativeModeTab("tab5") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(Items.IRON_SWORD);
+        }
+    };
+
 
     public static final RegistryObject<Block> GRAPHITE_ORE = BLOCKS.register("graphite_ore", () -> new GraphiteOre(){
         @Override
@@ -196,6 +204,7 @@ public class Registry {
 
 
     //TEST
+    public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Block> VOID_BLOCK = BLOCKS.register("void", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).noCollission().friction(1)));
     public static final RegistryObject<BlockItem> VOID_BLOCK_ITEM = ITEMS.register("void", () -> new BlockItem(VOID_BLOCK.get(), new Item.Properties().tab(tabDev)));
     public static final RegistryObject<Block> DECO = BLOCKS.register("deco", () -> new Block(Block.Properties.copy(LIMONITE_ORE.get())){
