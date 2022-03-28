@@ -1,10 +1,9 @@
 package com.dimucathedev.shaftcraft.Blocks;
 
-import com.dimucathedev.shaftcraft.Registry;
+import com.dimucathedev.shaftcraft.Registry.Blocks;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropperBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -17,7 +16,7 @@ import static net.minecraft.world.phys.shapes.Shapes.join;
 public class DecoCrafter extends DropperBlock {
 
     public DecoCrafter() {
-        super(Properties.copy(Registry.LIMONITE_ORE.get()));
+        super(Properties.copy(Blocks.LIMONITE_ORE.get()));
         this.registerDefaultState(this.defaultBlockState().setValue(HORIZONTAL_FACING, Direction.NORTH));
     }
 
