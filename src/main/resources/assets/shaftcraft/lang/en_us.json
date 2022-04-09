@@ -1,22 +1,28 @@
 {
   "item.shaftcraft.graphite": "Graphite",
-  "block.shaftcraft.graphite_ore": "Graphite Ore",
   "item.shaftcraft.raw_graphite": "Raw Graphite",
-
   "item.shaftcraft.bauxite": "Bauxite",
-  "block.shaftcraft.bauxite_ore": "Bauxite Ore",
   "item.shaftcraft.raw_bauxite": "Raw Bauxite",
-
   "item.shaftcraft.limonite": "Limonite",
-  "block.shaftcraft.limonite_ore": "Limonite Ore",
-
   "item.shaftcraft.ruby": "Ruby",
-  "block.shaftcraft.ruby_ore": "Ruby Ore",
-
   "item.shaftcraft.synthetic_ruby": "Synthetic Ruby",
+  "item.shaftcraft.copper_pickaxe": "Copper Pickaxe",
+
+  "block.shaftcraft.ruby_ore": "Ruby Ore",
+  "block.shaftcraft.limonite_ore": "Limonite Ore",
+  "block.shaftcraft.bauxite_ore": "Bauxite Ore",
+  "block.shaftcraft.graphite_ore": "Graphite Ore",
+  "block.shaftcraft.travertine_tile": "Travertine Bricks",
+  "block.shaftcraft.travertine": "Travertine",
 
   "itemGroup.tab0": "ShaftCraft: Miscellaneous",
   "itemGroup.tab1": "ShaftCraft: Ores",
   "itemGroup.tab2": "ShaftCraft: Decorations",
-  "itemGroup.tab3": "ShaftCraft: Building Blocks"
+  "itemGroup.tab3": "ShaftCraft: Building Blocks",
+  "itemGroup.tab4": "ShaftCraft: Other",
+  "itemGroup.tab5": "ShaftCraft: Weapons",
+  "itemGroup.tab6": "ShaftCraft: Tools",
+
+  "toolTip.blastFurnace": "§7Use §eBlast Furnace§7 for smelting this item",
+  "worldJoin.text": "Hello!"
 }

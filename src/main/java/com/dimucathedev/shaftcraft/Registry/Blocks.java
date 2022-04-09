@@ -1,15 +1,11 @@
 package com.dimucathedev.shaftcraft.Registry;
 
-import com.dimucathedev.shaftcraft.GraphiteOre;
+import com.dimucathedev.shaftcraft.Blocks.Deco;
+import com.dimucathedev.shaftcraft.Blocks.GraphiteOre;
 import com.dimucathedev.shaftcraft.Main;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -17,7 +13,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -55,19 +50,7 @@ public class Blocks {
         }});
     public static final RegistryObject<Block> RUBY_ORE = reg.register("ruby_ore", () -> new GraphiteOre());
     public static final RegistryObject<Block> VOID_BLOCK = reg.register("void", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).noCollission().friction(1)));
-    public static final RegistryObject<Block> DECO = reg.register("deco", () -> new Block(Block.Properties.copy(LIMONITE_ORE.get())){
-        @Override
-        public InteractionResult use(BlockState p_60503_, Level p_60504_, BlockPos p_60505_, Player p_60506_, InteractionHand p_60507_, BlockHitResult p_60508_) {
-            if(p_60504_.isClientSide)
-            {
-                if (p_60506_.getMainHandItem().getItem() == Items.RUBY.get())
-                {
-                    p_60506_.getMainHandItem().shrink(1);
-                    p_60506_.getInventory().add(new ItemStack(Items.SYNTHETIC_RUBY.get()));
-                    return InteractionResult.SUCCESS;
-                }
-            }
-            return InteractionResult.SUCCESS;
-        }
-    });
+    public static final RegistryObject<Block> DECO = reg.register("deco", () -> new Deco(Block.Properties.copy(LIMONITE_ORE.get())));
+    public static final RegistryObject<Block> TRAVERTINE = reg.register("travertine", () -> new Block(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.ANDESITE)));
+
 }

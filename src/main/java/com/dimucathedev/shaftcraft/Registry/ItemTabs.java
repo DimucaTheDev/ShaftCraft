@@ -11,15 +11,8 @@ public class ItemTabs {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(TRAVERTINE_TILE_ITEM.get());
-
         }
     }; // Строительные блоки
-    public static final CreativeModeTab tabMisc = new CreativeModeTab("tab0") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(Items.RAW_GRAPHITE.get());
-        }
-    };   // "Другое"
     public static final CreativeModeTab tabOres = new CreativeModeTab("tab1") {
         @Override
         public ItemStack makeIcon() {
@@ -32,6 +25,24 @@ public class ItemTabs {
             return new ItemStack(SYNTHETIC_RUBY.get());
         }
     };   // Декоративные Блоки
+    public static final CreativeModeTab tabTools = new CreativeModeTab("tab6") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(COPPER_PICKAXE.get());
+        }
+    };
+    public static final CreativeModeTab tabWeapons = new CreativeModeTab("tab5") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(net.minecraft.world.item.Items.IRON_SWORD);
+        }
+    };  // Инструменты
+    public static final CreativeModeTab tabMisc = new CreativeModeTab("tab0") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(Items.RAW_GRAPHITE.get());
+        }
+    };   // "Другое"
     public static final CreativeModeTab tabDev = new CreativeModeTab("tab4") {
         @Override
         public ItemStack makeIcon() {
@@ -42,11 +53,5 @@ public class ItemTabs {
         public CreativeModeTab setBackgroundImage(ResourceLocation texture) {
             return super.setBackgroundImage(new ResourceLocation("shaftcraft","dnu.png"));
         }
-    };    //
-    public static final CreativeModeTab tabTools = new CreativeModeTab("tab5") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(net.minecraft.world.item.Items.IRON_SWORD);
-        }
-    };  //
+    };    // Dev
 }

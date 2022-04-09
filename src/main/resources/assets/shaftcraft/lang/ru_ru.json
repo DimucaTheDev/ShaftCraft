@@ -1,0 +1,28 @@
+{
+  "item.shaftcraft.graphite": "Графит",
+  "item.shaftcraft.raw_graphite": "Сырой Графит",
+  "item.shaftcraft.bauxite": "Боксит",
+  "item.shaftcraft.raw_bauxite": "Сырой Боксит",
+  "item.shaftcraft.limonite": "Лимонит",
+  "item.shaftcraft.ruby": "Рубин",
+  "item.shaftcraft.synthetic_ruby": "Синтетический Рубин",
+  "item.shaftcraft.copper_pickaxe": "Медная Кирка",
+
+  "block.shaftcraft.graphite_ore": "Графитовая Руда",
+  "block.shaftcraft.ruby_ore": "Рубиновая Руда",
+  "block.shaftcraft.limonite_ore": "Лимонитовая Руда",
+  "block.shaftcraft.bauxite_ore": "Бокситовая Руда",
+  "block.shaftcraft.travertine_tile": "Кирпичи из травертина",
+  "block.shaftcraft.travertine": "Травертин",
+
+  "itemGroup.tab0": "ShaftCraft: Разное",
+  "itemGroup.tab1": "ShaftCraft: Руды",
+  "itemGroup.tab2": "ShaftCraft: Декоративные Вещи",
+  "itemGroup.tab3": "ShaftCraft: Строительные Блоки",
+  "itemGroup.tab4": "ShaftCraft: Другое",
+  "itemGroup.tab5": "ShaftCraft: Оружие",
+  "itemGroup.tab6": "ShaftCraft: Инструменты",
+
+  "toolTip.blastFurnace": "§7Используйте §eПлавильню§7 что-бы переплавить этот предмет",
+  "worldJoin.text": "Hello!"
+}

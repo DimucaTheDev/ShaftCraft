@@ -1,7 +1,15 @@
 package com.dimucathedev.shaftcraft;
 
+import com.dimucathedev.shaftcraft.Registry.Blocks;
 import com.dimucathedev.shaftcraft.Registry.Items;
-import net.minecraft.world.level.block.Blocks;
+import com.dimucathedev.shaftcraft.Registry.Sounds;
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.IntegerArgumentType;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.commands.arguments.item.ItemArgument;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -13,25 +21,17 @@ import org.apache.logging.log4j.Logger;
 @Mod("shaftcraft")
 public class Main
 {
-    // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
-    public static final String MOD_ID = "shaftcraft";
+    private static final Logger LOGGER = LogManager.getLogger(); //Бесполезная хрень
+    public static final String MOD_ID = "shaftcraft"; //АйДи мода
     public static void init(){
         Items.reg.register(FMLJavaModLoadingContext.get().getModEventBus());
-        com.dimucathedev.shaftcraft.Registry.Blocks.reg.register(FMLJavaModLoadingContext.get().getModEventBus());
-    }
+        Sounds.reg.register(FMLJavaModLoadingContext.get().getModEventBus());
+        Blocks.reg.register(FMLJavaModLoadingContext.get().getModEventBus());
+    } //блоки предметы и прочая ХРЕНЬ
     public Main() {
-        // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-
         init();
-
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-    }
-    private void setup(final FMLCommonSetupEvent event){
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-    }
+    } // инит
+    private void setup(final FMLCommonSetupEvent event){} //тоже какая то бесполезная хрень, сказали не убирать
 }
