@@ -105,7 +105,7 @@ public class Items {
 
         @Override
         public float getAttackDamageBonus() {
-            return 1.5f;
+            return 0.5f;
         }
 
         @Override
@@ -123,4 +123,66 @@ public class Items {
             return Ingredient.of(net.minecraft.world.item.Items.COPPER_INGOT);
         }
     }, 1,-2.8f, new Item.Properties().tab(tabTools)));
+    public static final RegistryObject<SwordItem> COPPER_SWORD = reg.register("copper_sword", () -> new SwordItem(new Tier() {
+        @Override
+        public int getUses() {
+            return 210;
+        }
+
+        @Override
+        public float getSpeed() {
+            return 4;
+        }
+
+        @Override
+        public float getAttackDamageBonus() {
+            return 2.5f;
+        }
+
+        @Override
+        public int getLevel() {
+            return 1;
+        }
+
+        @Override
+        public int getEnchantmentValue() {
+            return 5;
+        }
+
+        @Override
+        public Ingredient getRepairIngredient() {
+            return Ingredient.of(new ItemStack(net.minecraft.world.item.Items.COPPER_INGOT));
+        }
+    },3,-2.5f,new Item.Properties().tab(tabWeapons)));
+    public static final RegistryObject<AxeItem> COPPER_AXE = reg.register("copper_axe", () -> new AxeItem(new Tier() {
+        @Override
+        public int getUses() {
+            return 220;
+        }
+
+        @Override
+        public float getSpeed() {
+            return 2;
+        }
+
+        @Override
+        public float getAttackDamageBonus() {
+            return 5;
+        }
+
+        @Override
+        public int getLevel() {
+            return 1;
+        }
+
+        @Override
+        public int getEnchantmentValue() {
+            return 1;
+        }
+
+        @Override
+        public Ingredient getRepairIngredient() {
+            return Ingredient.of(new ItemStack(net.minecraft.world.item.Items.COPPER_INGOT));
+        }
+    }, 5.3f,-3.1f,new Item.Properties().tab(tabTools)));
 }
