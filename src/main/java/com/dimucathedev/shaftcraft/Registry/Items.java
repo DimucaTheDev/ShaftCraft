@@ -1,12 +1,18 @@
 package com.dimucathedev.shaftcraft.Registry;
 
+import com.dimucathedev.shaftcraft.Blocks.Test;
+import com.dimucathedev.shaftcraft.Entities.TravertineEntity;
 import com.dimucathedev.shaftcraft.Items.RawGraphite;
+import com.dimucathedev.shaftcraft.Items.TravertineProjectile;
 import com.dimucathedev.shaftcraft.Main;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
@@ -63,14 +69,20 @@ public class Items {
             super.appendHoverText(p_40572_, p_40573_, p_40574_, p_40575_);
         }
     });
-/*    public static final RegistryObject<Item> TRAVERTINE = reg.register("travertine_piece", () -> new Item(new Item.Properties().tab(tabMisc)) {
+    public static final RegistryObject<TravertineProjectile> TRAVERTINE = reg.register("travertine_piece", () -> new TravertineProjectile(new Item.Properties().tab(tabMisc)) {
         @Override
         public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
             p_41423_.add(new TextComponent(ChatFormatting.GOLD+"Ca(HCO3)2 -> CaCO3+H2O+CO2"));
             super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
         }
-    });*/
-    public static final RegistryObject<Item> TRAVERTINE_TILE_ITEM = reg.register("travertine_tile", () -> new BlockItem(Blocks.TRAVERTINE_TILE.get(), new Item.Properties().tab(tabBlocks)));
+    });
+    public static final RegistryObject<Item> TRAVERTINE_TILE_ITEM = reg.register("travertine_tile", () -> new BlockItem(Blocks.TRAVERTINE_TILE.get(), new Item.Properties().tab(tabBlocks)){
+        @Override
+        public InteractionResultHolder<ItemStack> use(Level p_41432_, Player p_41433_, InteractionHand p_41434_) {
+
+            return super.use(p_41432_, p_41433_, p_41434_);
+        }
+    });
     public static final RegistryObject<BlockItem> LIMONITE_ORE_ITEM = reg.register("limonite_ore", () -> new BlockItem(Blocks.LIMONITE_ORE.get(), new Item.Properties().tab(tabOres)));
     public static final RegistryObject<Item> LIMONITE = reg.register("limonite", () -> new Item(new Item.Properties().tab(tabMisc)){
         @Override
@@ -91,7 +103,7 @@ public class Items {
     public static final RegistryObject<BlockItem> VOID_BLOCK_ITEM = reg.register("void", () -> new BlockItem(Blocks.VOID_BLOCK.get(), new Item.Properties().tab(tabDev)));
     public static final RegistryObject<BlockItem> DECO_ITEM = reg.register("deco", () -> new BlockItem(Blocks.DECO.get(), new Item.Properties().tab(tabDeco)));
     public static final RegistryObject<Item> SYNTHETIC_RUBY = reg.register("synthetic_ruby", () -> new Item(new Item.Properties().tab(tabDeco)));
-    public static final RegistryObject<BlockItem> TRAVERTINE_BLOCK_ITEM = reg.register("travertine", () -> new BlockItem(Blocks.TRAVERTINE.get(), new Item.Properties().tab(tabBlocks)));
+    public static final RegistryObject<Test> TRAVERTINE_BLOCK_ITEM = reg.register("travertine", () -> new Test(Blocks.TRAVERTINE.get(), new Item.Properties().tab(tabBlocks)));
     public static final RegistryObject<PickaxeItem> COPPER_PICKAXE = reg.register("copper_pickaxe", () -> new PickaxeItem(new Tier() {
         @Override
         public int getUses() {

@@ -7,6 +7,7 @@ import com.dimucathedev.shaftcraft.Registry.Sounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -34,9 +35,7 @@ public class Main
     } // инит
     private void setup(final FMLCommonSetupEvent event)
     {
-        ItemRenderer renderer = Minecraft.getInstance().getItemRenderer();
-        //EntityRenderers.register(Entities.TRAVERTINE_PROJECTILE.get(), null);
-
+        EntityRenderers.register(Entities.TRAVERTINE_PROJECTILE.get(), ThrownItemRenderer::new);
     } //тоже какая то бесполезная хрень, сказали не убирать
     private void clientSetup(FMLClientSetupEvent client){}
 }

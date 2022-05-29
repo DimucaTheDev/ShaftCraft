@@ -1,7 +1,10 @@
 package com.dimucathedev.shaftcraft.Items;
 
 import com.dimucathedev.shaftcraft.Entities.TravertineEntity;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
@@ -9,7 +12,12 @@ import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SnowballItem;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class TravertineProjectile extends Item {
     public TravertineProjectile(Properties p_41383_) {
@@ -17,15 +25,22 @@ public class TravertineProjectile extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level p_41432_, Player p_41433_, InteractionHand p_41434_) {
-        ItemStack stack = p_41433_.getItemInHand(p_41434_);
+    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
+        p_41423_.add(new TranslatableComponent("tooltip.travertine_throwable"));
+    }
 
-        if (p_41432_.isClientSide()) {
-            TravertineEntity e = new TravertineEntity(p_41432_,p_41433_);
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level p_43142_, Player p_43143_, InteractionHand p_43144_) {
+        ItemStack stack = p_43143_.getItemInHand(p_43144_);
+        if (!p_43142_.isClientSide()) {
+            TravertineEntity e = new TravertineEntity(p_43142_,p_43143_);
             e.setItem(stack);
-            e.shootFromRotation(p_41433_, p_41433_.getXRot(), p_41433_.getYRot(),0.0F, 1.5F, 1.0F);
-            p_41432_.addFreshEntity(e);
+            e.shootFromRotation(p_43143_, p_43143_.getXRot(), p_43143_.getYRot(),1.0F, 1.5F, 1.0F);
+            p_43142_.addFreshEntity(e);
         }
-        return InteractionResultHolder.sidedSuccess(stack, p_41432_.isClientSide());
+        if (!p_43143_.getAbilities().instabuild) {
+            stack.shrink(1);
+        }
+        return InteractionResultHolder.sidedSuccess(stack, p_43142_.isClientSide());
     }
 }

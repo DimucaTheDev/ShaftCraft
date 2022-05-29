@@ -52,5 +52,4 @@ public class Blocks {
     public static final RegistryObject<Block> VOID_BLOCK = reg.register("void", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).noCollission().friction(1)));
     public static final RegistryObject<Block> DECO = reg.register("deco", () -> new Deco(Block.Properties.copy(LIMONITE_ORE.get())));
     public static final RegistryObject<Block> TRAVERTINE = reg.register("travertine", () -> new Block(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.ANDESITE)));
-
 }

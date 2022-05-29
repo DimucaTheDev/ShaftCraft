@@ -4,6 +4,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import static com.dimucathedev.shaftcraft.Registry.Blocks.BAUXITE_ORE;
+import static com.dimucathedev.shaftcraft.Registry.Blocks.TRAVERTINE_TILE;
 import static com.dimucathedev.shaftcraft.Registry.Items.*;
 
 public class ItemTabs {
