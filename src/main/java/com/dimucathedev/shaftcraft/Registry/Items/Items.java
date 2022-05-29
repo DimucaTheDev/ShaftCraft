@@ -1,10 +1,10 @@
-package com.dimucathedev.shaftcraft.Registry;
+package com.dimucathedev.shaftcraft.Registry.Items;
 
-import com.dimucathedev.shaftcraft.Blocks.Test;
-import com.dimucathedev.shaftcraft.Entities.TravertineEntity;
 import com.dimucathedev.shaftcraft.Items.RawGraphite;
-import com.dimucathedev.shaftcraft.Items.TravertineProjectile;
+import com.dimucathedev.shaftcraft.Items.TravertineBlockProjectile;
+import com.dimucathedev.shaftcraft.Items.TravertinePieceProjectile;
 import com.dimucathedev.shaftcraft.Main;
+import com.dimucathedev.shaftcraft.Registry.Blocks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
@@ -69,7 +69,7 @@ public class Items {
             super.appendHoverText(p_40572_, p_40573_, p_40574_, p_40575_);
         }
     });
-    public static final RegistryObject<TravertineProjectile> TRAVERTINE = reg.register("travertine_piece", () -> new TravertineProjectile(new Item.Properties().tab(tabMisc)) {
+    public static final RegistryObject<TravertinePieceProjectile> TRAVERTINE_PIECE = reg.register("travertine_piece", () -> new TravertinePieceProjectile(new Item.Properties().tab(tabMisc)) {
         @Override
         public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
             p_41423_.add(new TextComponent(ChatFormatting.GOLD+"Ca(HCO3)2 -> CaCO3+H2O+CO2"));
@@ -103,7 +103,7 @@ public class Items {
     public static final RegistryObject<BlockItem> VOID_BLOCK_ITEM = reg.register("void", () -> new BlockItem(Blocks.VOID_BLOCK.get(), new Item.Properties().tab(tabDev)));
     public static final RegistryObject<BlockItem> DECO_ITEM = reg.register("deco", () -> new BlockItem(Blocks.DECO.get(), new Item.Properties().tab(tabDeco)));
     public static final RegistryObject<Item> SYNTHETIC_RUBY = reg.register("synthetic_ruby", () -> new Item(new Item.Properties().tab(tabDeco)));
-    public static final RegistryObject<Test> TRAVERTINE_BLOCK_ITEM = reg.register("travertine", () -> new Test(Blocks.TRAVERTINE.get(), new Item.Properties().tab(tabBlocks)));
+    public static final RegistryObject<TravertineBlockProjectile> TRAVERTINE_BLOCK_ITEM = reg.register("travertine", () -> new TravertineBlockProjectile(Blocks.TRAVERTINE.get(), new Item.Properties().tab(tabBlocks)));
     public static final RegistryObject<PickaxeItem> COPPER_PICKAXE = reg.register("copper_pickaxe", () -> new PickaxeItem(new Tier() {
         @Override
         public int getUses() {

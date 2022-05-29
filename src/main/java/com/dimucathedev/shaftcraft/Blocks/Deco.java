@@ -1,7 +1,6 @@
 package com.dimucathedev.shaftcraft.Blocks;
 
-import com.dimucathedev.shaftcraft.Registry.Items;
-import net.minecraft.ChatFormatting;
+import com.dimucathedev.shaftcraft.Registry.Items.Items;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -12,7 +11,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.client.ClientCommandHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class Deco extends FallingBlock {

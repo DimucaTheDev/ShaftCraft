@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "shaftcraft:travertine_piece"
+    }
+  },
+  "result": {
+    "item": "shaftcraft:travertine"
+  }
+}

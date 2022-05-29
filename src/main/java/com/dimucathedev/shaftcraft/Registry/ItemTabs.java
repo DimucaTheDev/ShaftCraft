@@ -1,11 +1,11 @@
 package com.dimucathedev.shaftcraft.Registry;
 
+import com.dimucathedev.shaftcraft.Registry.Items.Items;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import static com.dimucathedev.shaftcraft.Registry.Blocks.BAUXITE_ORE;
-import static com.dimucathedev.shaftcraft.Registry.Blocks.TRAVERTINE_TILE;
-import static com.dimucathedev.shaftcraft.Registry.Items.*;
+import static com.dimucathedev.shaftcraft.Registry.Items.Items.*;
 
 public class ItemTabs {
     public static final CreativeModeTab tabBlocks = new CreativeModeTab("tab3") {

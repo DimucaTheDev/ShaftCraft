@@ -7,6 +7,7 @@
   "item.shaftcraft.ruby": "Рубин",
   "item.shaftcraft.synthetic_ruby": "Синтетический Рубин",
   "item.shaftcraft.copper_pickaxe": "Медная Кирка",
+  "item.shaftcraft.travertine_piece": "Осколок травертина",
 
   "block.shaftcraft.graphite_ore": "Графитовая Руда",
   "block.shaftcraft.ruby_ore": "Рубиновая Руда",
@@ -15,7 +16,9 @@
   "block.shaftcraft.travertine_tile": "Кирпичи из травертина",
   "block.shaftcraft.travertine": "Травертин",
 
-  "death.attack.stone_kill": "%1$s был закидан камнями до смерти",
+  "death.attack.stone_kill.1": "%1$s был закидан травентином до смерти игроком %2$s",
+  "death.attack.stone_kill.2": "Игрок %2$s закидал игрока %1$s травентином до смерти",
+  "death.attack.stone_kill.self": "%1$s закидал себя камнями до смерти",
 
   "itemGroup.tab0": "ShaftCraft: Разное",
   "itemGroup.tab1": "ShaftCraft: Руды",
@@ -25,7 +28,10 @@
   "itemGroup.tab5": "ShaftCraft: Оружие",
   "itemGroup.tab6": "ShaftCraft: Инструменты",
 
-  "tooltip.travertine_throwable": "Можно швырять, наносит 5 единиц урона при по",
+  "tooltip.travertine_throwable1": "§7Можно кинуть, наносит до 5 единиц урона при попадании",
+  "tooltip.travertine_throwable2": "§7С большим шансом может сломаться, если попасть по блоку",
+  "tooltip.travertine_throwable3": "§7Можно кинуть, наносит до 7 единиц урона при попадании",
+  "tooltip.travertine_throwable4": "§7С большим шансом может расколоться на осколки, если попасть по блоку",
   "toolTip.blastFurnace": "§7Используйте §eПлавильню§7 что-бы переплавить этот предмет",
 
   "worldJoin.text": "Hello!"

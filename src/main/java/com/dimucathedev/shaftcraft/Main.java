@@ -2,11 +2,9 @@ package com.dimucathedev.shaftcraft;
 
 import com.dimucathedev.shaftcraft.Registry.Blocks;
 import com.dimucathedev.shaftcraft.Registry.Entities;
-import com.dimucathedev.shaftcraft.Registry.Items;
+import com.dimucathedev.shaftcraft.Registry.Items.Items;
 import com.dimucathedev.shaftcraft.Registry.Sounds;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -36,6 +34,7 @@ public class Main
     private void setup(final FMLCommonSetupEvent event)
     {
         EntityRenderers.register(Entities.TRAVERTINE_PROJECTILE.get(), ThrownItemRenderer::new);
-    } //тоже какая то бесполезная хрень, сказали не убирать
+        EntityRenderers.register(Entities.TRAVERTINE_PIECE_PROJECTILE.get(), ThrownItemRenderer::new);
+    } //Регистрация модельки ентити
     private void clientSetup(FMLClientSetupEvent client){}
 }
