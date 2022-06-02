@@ -76,7 +76,7 @@ public class Items {
             super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
         }
     });
-    public static final RegistryObject<Item> TRAVERTINE_TILE_ITEM = reg.register("travertine_tile", () -> new BlockItem(Blocks.TRAVERTINE_TILE.get(), new Item.Properties().tab(tabBlocks)){
+    public static final RegistryObject<Item> TRAVERTINE_BRICKS_ITEM = reg.register("travertine_bricks", () -> new BlockItem(Blocks.TRAVERTINE_BRICKS.get(), new Item.Properties().tab(tabBlocks)){
         @Override
         public InteractionResultHolder<ItemStack> use(Level p_41432_, Player p_41433_, InteractionHand p_41434_) {
 

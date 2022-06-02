@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "shaftcraft:blocks/travertine_tile"
+    "all": "shaftcraft:blocks/travertine_bricks"
   }
 }

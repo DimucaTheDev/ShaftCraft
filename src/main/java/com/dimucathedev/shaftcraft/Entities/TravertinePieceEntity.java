@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -57,6 +58,7 @@ public class TravertinePieceEntity extends ThrowableItemProjectile {
     }
     @Override
     protected void onHit(HitResult p_37260_) {
+        handleEntityEvent((byte)3);
         Random r = new Random();
         if (p_37260_.getType() == HitResult.Type.ENTITY){
             Entity e = ((EntityHitResult)p_37260_).getEntity();
@@ -72,10 +74,11 @@ public class TravertinePieceEntity extends ThrowableItemProjectile {
         }
         else {
             if(r.nextDouble(10) > 6)
-                spawnSelf(p_37260_);
+                if(!((Player)getOwner()).getAbilities().instabuild)
+                    spawnSelf(p_37260_);
             else kill();
         }
-        handleEntityEvent((byte)3);
+
     }
     public void spawnSelf(HitResult p_37260_){
         ItemEntity entity = new ItemEntity(level, p_37260_.getLocation().x,p_37260_.getLocation().y,p_37260_.getLocation().z,new ItemStack(Items.TRAVERTINE_PIECE.get()));

@@ -13,6 +13,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
@@ -59,7 +60,7 @@ public class TravertineBlockEntity extends ThrowableItemProjectile {
     }
     @Override
     protected void onHit(HitResult p_37260_) {
-
+        handleEntityEvent((byte)3);
         Random r = new Random();
         if (p_37260_.getType() == HitResult.Type.ENTITY){
             Entity e = ((EntityHitResult)p_37260_).getEntity();
@@ -75,7 +76,8 @@ public class TravertineBlockEntity extends ThrowableItemProjectile {
         }
         else {
             if(r.nextDouble(10) > 6)
-                spawnSelf(p_37260_, 4);
+                if(!((Player)getOwner()).getAbilities().instabuild)
+                    spawnSelf(p_37260_, 4);
             else kill();
         }
         handleEntityEvent((byte)3);

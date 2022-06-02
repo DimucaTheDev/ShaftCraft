@@ -11,7 +11,7 @@ public class ItemTabs {
     public static final CreativeModeTab tabBlocks = new CreativeModeTab("tab3") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(TRAVERTINE_TILE_ITEM.get());
+            return new ItemStack(TRAVERTINE_BRICKS_ITEM.get());
         }
     }; // Строительные блоки
     public static final CreativeModeTab tabOres = new CreativeModeTab("tab1") {
