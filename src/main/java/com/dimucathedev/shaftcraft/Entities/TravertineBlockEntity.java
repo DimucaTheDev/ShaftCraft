@@ -70,13 +70,13 @@ public class TravertineBlockEntity extends ThrowableItemProjectile {
         }
 
         var pos = new BlockPos(p_37260_.getLocation().x, p_37260_.getLocation().y, p_37260_.getLocation().z);
-        int a = count(level.getBlockState(pos).getBlock().getRegistryName().toString(), "glass");
+        int a = count(level.getBlockState(pos).getBlock().getName().toString(), "glass");
         if (a > 0) {
             level.destroyBlock(pos, false);
         }
         else {
             if(r.nextDouble(10) > 6)
-                if(!((Player)getOwner()).getAbilities().instabuild)
+            //if(!((Player)getOwner()).getAbilities().instabuild)
                     spawnSelf(p_37260_, 4);
             else kill();
         }

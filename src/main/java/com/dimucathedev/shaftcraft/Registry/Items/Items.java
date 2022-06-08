@@ -7,8 +7,6 @@ import com.dimucathedev.shaftcraft.Main;
 import com.dimucathedev.shaftcraft.Registry.Blocks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -34,7 +32,7 @@ public class Items {
     public static final RegistryObject<Item> RAW_GRAPHITE = reg.register("raw_graphite", () -> new RawGraphite(){
         @Override
         public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-            p_41423_.add(new TranslatableComponent("toolTip.blastFurnace"));
+            p_41423_.add(Component.translatable("toolTip.blastFurnace"));
             super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
         }
 
@@ -46,7 +44,7 @@ public class Items {
     public static final RegistryObject<Item> GRAPHITE = reg.register("graphite", () -> new Item(new Item.Properties().tab(tabMisc).fireResistant()){
         @Override
         public void appendHoverText(ItemStack p_40572_, @Nullable Level p_40573_, List<Component> p_40574_, TooltipFlag p_40575_) {
-            p_40574_.add(new TextComponent(ChatFormatting.GOLD+"C"));
+            p_40574_.add(Component.translatable(ChatFormatting.GOLD+"C"));
             super.appendHoverText(p_40572_, p_40573_, p_40574_, p_40575_);
         }
     });
@@ -54,7 +52,7 @@ public class Items {
     public static final RegistryObject<Item> RAW_BAUXITE = reg.register("raw_bauxite", () -> new RawGraphite() {
         @Override
         public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-            p_41423_.add(new TranslatableComponent("toolTip.blastFurnace"));
+            p_41423_.add(Component.translatable("toolTip.blastFurnace"));
             super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
         }
         @Override
@@ -65,14 +63,14 @@ public class Items {
     public static final RegistryObject<Item> BAUXITE = reg.register("bauxite", () -> new Item(new Item.Properties().tab(tabMisc).fireResistant()){
         @Override
         public void appendHoverText(ItemStack p_40572_, @Nullable Level p_40573_, List<Component> p_40574_, TooltipFlag p_40575_) {
-            p_40574_.add(new TextComponent(ChatFormatting.GOLD+"Al2O3*xH2O"));
+            p_40574_.add(Component.translatable(ChatFormatting.GOLD+"Al2O3*xH2O"));
             super.appendHoverText(p_40572_, p_40573_, p_40574_, p_40575_);
         }
     });
     public static final RegistryObject<TravertinePieceProjectile> TRAVERTINE_PIECE = reg.register("travertine_piece", () -> new TravertinePieceProjectile(new Item.Properties().tab(tabMisc)) {
         @Override
         public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-            p_41423_.add(new TextComponent(ChatFormatting.GOLD+"Ca(HCO3)2 -> CaCO3+H2O+CO2"));
+            p_41423_.add(Component.translatable(ChatFormatting.GOLD+"Ca(HCO3)2 -> CaCO3+H2O+CO2"));
             super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
         }
     });
@@ -87,7 +85,7 @@ public class Items {
     public static final RegistryObject<Item> LIMONITE = reg.register("limonite", () -> new Item(new Item.Properties().tab(tabMisc)){
         @Override
         public void appendHoverText(ItemStack p_40572_, @Nullable Level p_40573_, List<Component> p_40574_, TooltipFlag p_40575_) {
-            p_40574_.add(new TextComponent(ChatFormatting.GOLD+"FeOOH·(Fe2O3·nH2O)"));
+            p_40574_.add(Component.translatable(ChatFormatting.GOLD+"FeOOH·(Fe2O3·nH2O)"));
             super.appendHoverText(p_40572_, p_40573_, p_40574_, p_40575_);
         }
     });
@@ -95,7 +93,7 @@ public class Items {
     public static final RegistryObject<Item> RUBY = reg.register("ruby", () -> new Item(new Item.Properties().tab(tabMisc).fireResistant()){
         @Override
         public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-            p_41423_.add(new TextComponent(ChatFormatting.GOLD+"Al2O3"));
+            p_41423_.add(Component.translatable(ChatFormatting.GOLD+"Al2O3"));
             super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
         }
     });

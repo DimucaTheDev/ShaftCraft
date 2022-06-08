@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -38,7 +39,7 @@ public class Blocks {
         public int getLightEmission(BlockState state, BlockGetter world, BlockPos pos) {return 4;}
 
         @Override
-        public void animateTick(BlockState p_49888_, Level p_49889_, BlockPos p_49890_, Random p_49891_) {
+        public void animateTick(BlockState p_49888_, Level p_49889_, BlockPos p_49890_, RandomSource p_49891_) {
 
             BlockPos p_152432_ = p_49890_;
             Random r = new Random();

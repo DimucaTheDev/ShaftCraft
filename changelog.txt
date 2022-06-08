@@ -1,6 +1,104 @@
-1.18.x Changelog
+1.19.x Changelog
+41.0
+====
+ - 41.0.4 Fix getting entity data serializer id crashing due to improper port to new registry system (#8678)
+ - 41.0.3 Fire registry events in the order vanilla registers to registries (#8677)
+          Custom registries are still fired in alphabetical order, after all vanilla registries.
+          Move forge's data_serializers registry to forge namespace.
+ - 41.0.2 Add method with pre/post wrap to allow setting/clearing mod context. (#8682)
+          Fixes ActiveContainer in ModContext not being present in registry events. Closes #8680
+ - 41.0.1 Fix the Curlie oopsie
+ - 41.0.0 Forge 1.19
+          * Bump pack.mcmeta formats
+          * 1.19 biome modifiers
+          * Mark ClientPlayerNetworkEvent.LoggedOutEvent's getters as nullable
+          * Add docs and package-info to client extension interfaces package
+          * Move RenderBlockOverlayEvent hooks to ForgeHooksClient
+          * Add package-infos to client events package
+          * Rename SoundLoadEvent to SoundEngineLoadEvent
+          This reduces confusion from consumers which may think the
+          name SoundLoadEvent refers to an individual sound being loaded rather
+          than the sound engine.
+          * Document and change SoundLoadEvent to fire on mod bus
+          Previously, it fired on both the mod bus and the Forge bus, which is
+          confusing for consumers.
+          * Delete SoundSetupEvent
+          Looking at its original implementation shows that there isn't an
+          appropriate place in the new sound code to reinsert the event, and the
+          place of 'sound engine/manager initialization event' is taken already by SoundLoadEvent.
+          * Perform some cleanup on client events
+           - Removed nullable annotations from ClientPlayerNetworkEvent
+           - Renamed #getPartialTicks methods to #getPartialTick, to be consistent
+            with vanilla's naming of the partial tick
+           - Cleanup documentation to remove line breaks, use the
+            spelling 'cancelled' over
+            'canceled', and improve docs on existing and
+             new methods.
+          * Remove EntityEvent.CanUpdate
+          Closes MinecraftForge/MinecraftForge#6394
+          * Switch to Jetbrains nullability annotations
+          * New PlayLevelSoundEvent; replaces old PlaySoundAtEntityEvent
+          * Remove ForgeWorldPresetScreens
+          * Remove IForgeRegistryEntry
+          * Remove use of List<Throwable> in FML's CompletableFutures
+          * Add docs to mod loading stages, stages, and phases
+          * Gradle 7.4.2
+          * Use SLF4J in FMLLoader and other subprojects
+          * Switch dynamic versions in subprojects to pinned ones
+          * Switch ForgeRoot and MDK to FG plugin markers
+          * Configure Forge javadoc task
+          The task now uses a custom stylesheet with MCForge elements, and
+          configured to combine the generation from the four FML subprojects
+          (fmlloader, fmlcore, javafmllanguage, mclanguage) and the Forge project
+          into the javadoc output.
+          * Update docs/md files, for 1.19 update and the move away from IRC to Discord.
+          * Make "Potentially dangerous alternative prefix" a debug warning, not info.
+          Co-authored-by: Curle <curle@gemwire.uk>
+          Co-authored-by: sciwhiz12 <arnoldnunag12@gmail.com>
+
 40.1
 ====
+ - 40.1.48 [1.18.x] Fix #8530 (Banner Pattern) NPE (#8666)
+ - 40.1.47 Revert "[1.18.x] Enable the Forge light pipeline by default (#8629)" (#8663)
+ - 40.1.46 Fix eager loading of model loaders during datagen causing NPE (#8659)
+ - 40.1.45 [1.18.x] Fix 2 crossbow animations not applying to custom variants (#8625)
+ - 40.1.44 [1.18.x] Added new Disconnection screen to display better channel/registry mismatch information (#8402)
+           Co-authored-by: Curle <42079760+TheCurle@users.noreply.github.com>
+ - 40.1.43 [1.18] Avoid exclusive synchronisation in block render type lookups (#8476)
+ - 40.1.42 [1.18] Fix command redirects by replacing Commands#fillUsableCommands (#8616)
+           Commands#fillUsableCommands does not handle redirect nodes properly. It
+           blindly pulls from the cached node map for a redirect node, which may
+           have no result because the target node of the redirect has not been
+           visited yet.
+           CommandHelper#mergeCommandNode is better in this regard, because it
+           visits the target node of the redirect instead of blindly pulling from
+           the node map.
+           Fixes #7551
+ - 40.1.41 [1.18] Fix tags command suggestion to include dynamic registries (#8638)
+           Manually entering the names of dynamic registries work as expected. The
+           suggestions for registries didn't include dynamic registries because
+           they queried the static registries rather than querying all registries
+           from the server's `RegistryAccess` (which includes both static
+           registries and dynamic registries).
+ - 40.1.40 Low code language provider (#8633)
+           Co-authored-by: Curle <42079760+TheCurle@users.noreply.github.com>
+ - 40.1.39 [1.18.x] Add checkJarCompatibility task (#8644)
+ - 40.1.38 [1.18.x] Fix Banner Patterns not being extensible (#8530)
+           Co-authored-by: Curle <42079760+TheCurle@users.noreply.github.com>
+ - 40.1.37 1.18.x Port BiomeDictionary over to biome tags (#8564)
+ - 40.1.36 [1.18.x] Enable the Forge light pipeline by default (#8629)
+ - 40.1.35 [1.18.x] Allow Modders to add custom data-pack registries through RegistryBuilder (#8630)
+           Co-authored-by: Silverminer007 <66484505+Silverminer007@users.noreply.github.com>
+           Co-authored-by: Curle <42079760+TheCurle@users.noreply.github.com>
+ - 40.1.34 [1.18] Allow custom rarities to directly modify the style (#8648)
+ - 40.1.33 [1.18] Fix reload listener registration in ModelLoaderRegistry (#8650)
+ - 40.1.32 Fix wrong position in Level#hasChunk() call in IForgeBlockGetter (#8654)
+ - 40.1.31 Add ItemStack context to Enchantment#getDamageBonus (#8635)
+ - 40.1.30 Fix attack cooldown bar showing when out of reach of target. Closes #8639 (#8640)
+ - 40.1.29 Improve TagsUpdatedEvent by adding update case information. (#8636)
+ - 40.1.28 Deprecate patched-in Style methods for removal, vanilla variants exist. (#8615)
+ - 40.1.27 Add pack-type-specific format versions in pack metadata. Fixes #8563 (#8612)
+ - 40.1.26 Catch and aggregate exceptions during NewRegistryEvent (#8601)
  - 40.1.25 Added removeErroringEntities config option (#8627)
            Counterpart to removeErroringBlockEntities
  - 40.1.24 Add missing patches for not lowering mipmap level for small textures (#8622)
