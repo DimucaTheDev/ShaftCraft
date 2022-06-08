@@ -52,7 +52,7 @@ public class Deco extends FallingBlock {
             return InteractionResult.CONSUME;
         }
     }
-CraftingContainer
+
     public MenuProvider getMenuProvider(BlockState p_52240_, Level p_52241_, BlockPos p_52242_) {
         return new SimpleMenuProvider((p_52229_, p_52230_, p_52231_) -> {
             return new CraftingMenu(p_52229_, p_52230_, ContainerLevelAccess.create(p_52241_, p_52242_));
