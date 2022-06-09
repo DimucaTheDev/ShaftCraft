@@ -32,6 +32,7 @@
   "tooltip.travertine_throwable2": "§7С большим шансом может сломаться, если попасть по блоку",
   "tooltip.travertine_throwable3": "§7Можно кинуть, наносит до 7 единиц урона при попадании",
   "tooltip.travertine_throwable4": "§7С большим шансом может расколоться на осколки, если попасть по блоку",
+  "tooltip.travertine_glass_break": "§7При попадании в стекло разобьет его",
   "tooltip.cooldown.travertine_block": "\n§сПерезарядка: 3.5 секунд§r",
   "tooltip.cooldown.travertine_piece": "\n§сПерезарядка: 2.5 секунд§r",
   "tooltip.blastFurnace": "§7Используйте §eПлавильню§7 что-бы переплавить этот предмет",
