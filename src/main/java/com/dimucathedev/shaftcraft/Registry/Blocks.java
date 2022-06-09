@@ -37,10 +37,8 @@ public class Blocks {
     public static final RegistryObject<Block> LIMONITE_ORE = reg.register("limonite_ore", () -> new GraphiteOre() {
         @Override
         public int getLightEmission(BlockState state, BlockGetter world, BlockPos pos) {return 4;}
-
         @Override
         public void animateTick(BlockState p_49888_, Level p_49889_, BlockPos p_49890_, RandomSource p_49891_) {
-
             BlockPos p_152432_ = p_49890_;
             Random r = new Random();
             if(r.nextInt(0,100)<30)

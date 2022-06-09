@@ -23,6 +23,6 @@
   "itemGroup.tab5": "ShaftCraft: Weapons",
   "itemGroup.tab6": "ShaftCraft: Tools",
 
-  "toolTip.blastFurnace": "§7Use §eBlast Furnace§7 for smelting this item",
+  "tooltip.blastFurnace": "§7Use §eBlast Furnace§7 for smelting this item",
   "worldJoin.text": "Hello!"
 }

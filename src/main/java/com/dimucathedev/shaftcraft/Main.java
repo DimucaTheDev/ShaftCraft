@@ -5,6 +5,7 @@ import com.dimucathedev.shaftcraft.Registry.Entities;
 import com.dimucathedev.shaftcraft.Registry.Items.Items;
 import com.dimucathedev.shaftcraft.Registry.Sounds;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;

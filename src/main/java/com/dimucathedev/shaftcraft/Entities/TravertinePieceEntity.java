@@ -12,18 +12,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.CraftingTableBlock;
-import net.minecraft.world.level.block.SculkShriekerBlock;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import java.util.Objects;
 import java.util.Random;
 
 public class TravertinePieceEntity extends ThrowableItemProjectile {
@@ -34,9 +30,7 @@ public class TravertinePieceEntity extends ThrowableItemProjectile {
     public TravertinePieceEntity(Level p_37399_, LivingEntity p_37400_) {
         super(Entities.TRAVERTINE_PIECE_PROJECTILE.get(), p_37400_, p_37399_);
     }
-    public TravertinePieceEntity(Level p_37394_, double p_37395_, double p_37396_, double p_37397_) {
-        super(Entities.TRAVERTINE_PIECE_PROJECTILE.get(), p_37395_, p_37396_, p_37397_, p_37394_);
-    }
+
     @Override
     protected Item getDefaultItem() {
         return Items.TRAVERTINE_PIECE.get();
@@ -91,6 +85,4 @@ public class TravertinePieceEntity extends ThrowableItemProjectile {
     public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
-
-
 }

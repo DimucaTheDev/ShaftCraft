@@ -52,7 +52,7 @@ public class ItemTabs {
 
         @Override
         public CreativeModeTab setBackgroundImage(ResourceLocation texture) {
-            return super.setBackgroundImage(new ResourceLocation("shaftcraft:textures/dnu.png"));
+            return super.setBackgroundImage(new ResourceLocation("shaftcraft:2"));
         }
     };    // Dev
 }
